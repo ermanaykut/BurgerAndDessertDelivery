@@ -8,10 +8,17 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.white,
   },
+  ImageContainer:{
+    justifyContent:'center',
+    alignItems:'center',
+
+
+  },
 
   image: {
-    width: '100%',
+    width: '50%',
     height: 225,
+
   },
   bottomContainer: {
     flex: 1,

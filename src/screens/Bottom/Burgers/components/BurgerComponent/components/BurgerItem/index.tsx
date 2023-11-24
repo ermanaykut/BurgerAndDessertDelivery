@@ -7,6 +7,7 @@ import { PAGES } from '../../../../../../pages';
 
 const BurgerItem = ({item}: {item: IBurger}) => {
 
+  console.log(item?.images?.[0])
   const navigation = useNavigation<any>()
 
   const navToBurgerDetail = () =>{
@@ -14,7 +15,7 @@ const BurgerItem = ({item}: {item: IBurger}) => {
   }
   return (
     <Pressable onPress={navToBurgerDetail} style={styles.container}>
-      <Image source={{uri: item?.images}} style={styles.image} />
+      <Image source={{uri: item?.images?.[0]?.sm as unknown as string}} style={styles.image} />
       <View style={styles.rightContainer}>
         <Text style={styles.name}>{item.name}</Text>
         <Text style={styles.description} numberOfLines={1}>

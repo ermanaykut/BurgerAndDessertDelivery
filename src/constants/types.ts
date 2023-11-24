@@ -1,12 +1,16 @@
 export interface IBurger {
   desc: string;
   id:number;
-  images:string;
+  images:Images[];
   ingredients:any[];
   img?:string;
   name: string;
   price: number;
   veg: boolean;
+}
+
+export interface Images {
+  sm: string[][];
 }
 
 export interface IDessert {

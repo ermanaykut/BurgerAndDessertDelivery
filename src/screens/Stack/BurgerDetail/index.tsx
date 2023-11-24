@@ -90,7 +90,10 @@ const BurgerDetail = ({route}: any) => {
 
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={{uri: item?.images}} />
+      <View style={styles.ImageContainer}>
+
+      <Image style={styles.image} source={{uri: item?.images?.[0]?.sm as unknown as string}} />
+      </View>
       <View style={styles.bottomContainer}>
         <View>
           <Text style={styles.title}>{item?.name}</Text>
