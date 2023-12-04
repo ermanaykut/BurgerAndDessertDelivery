@@ -1,8 +1,6 @@
 import {action, makeAutoObservable, observable, runInAction} from 'mobx';
 import {IAddress} from '../constants/types';
 
-
-
 class AddressStore {
   constructor() {
     makeAutoObservable(this);
@@ -28,16 +26,17 @@ class AddressStore {
       arr.push(addressData);
     }
     this.address = arr ?? [];
-    
   };
 
   @action updateAddress = (updatedAddress: IAddress) => {
-    const index = this.address.findIndex(address => address.id === updatedAddress.id);
-  
+    const index = this.address.findIndex(
+      address => address.id === updatedAddress.id,
+    );
+
     if (index !== -1) {
       runInAction(() => {
         let updatedArray = [...this.address];
-  
+
         // If the updated address is set as default, update other addresses accordingly
         if (updatedAddress.defaultAddress) {
           updatedArray.forEach((address, i) => {
@@ -46,28 +45,18 @@ class AddressStore {
             }
           });
         }
-  
+
         // Update the observable array directly
-        updatedArray[index] = { ...updatedAddress };
+        updatedArray[index] = {...updatedAddress};
         this.address = updatedArray;
-        
       });
     }
-
   };
-  
-  
-  
 
   getAddressById(id: string | undefined): IAddress | undefined {
     // Find the address with the given ID
     return this.address.find(address => address.id === id);
   }
-  
-  
-  
-  
-  
 
   @action deleteAddress = (addressData: IAddress) => {
     const arr: IAddress[] = this.address;
@@ -94,7 +83,6 @@ class AddressStore {
 
     return this.controlAddresssName;
   };
-  
 }
 
 export default new AddressStore();

@@ -8,7 +8,7 @@ import { DATA } from './data';
 const BurgerComponent = () => {
   const [burgerList, setBurgerList] = useState<IBurger[]>()
   useEffect(() => {
-    getBurgers();
+    //getBurgers();
     
   }, []);
 

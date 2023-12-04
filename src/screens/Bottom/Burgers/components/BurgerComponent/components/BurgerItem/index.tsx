@@ -6,8 +6,6 @@ import { useNavigation } from '@react-navigation/native';
 import { PAGES } from '../../../../../../pages';
 
 const BurgerItem = ({item}: {item: IBurger}) => {
-
-  console.log(item?.images?.[0])
   const navigation = useNavigation<any>()
 
   const navToBurgerDetail = () =>{

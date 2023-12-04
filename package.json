@@ -16,6 +16,7 @@
     "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
+    "@shopify/flash-list": "^1.6.3",
     "axios": "^1.6.2",
     "custom-components": "git+https://github.com/ermanaykut/RN-Custom-Components.git#0.1.1",
     "lottie-ios": "^4.3.3",
